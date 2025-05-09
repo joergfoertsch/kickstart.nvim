@@ -21,6 +21,14 @@ return {
         sshfs_args = { -- arguments to pass to the sshfs command
           '-o reconnect',
           '-o ConnectTimeout=5',
+          '-o dir_cache=yes',
+          '-o kernel_cache',
+          '-o cache=yes',
+          '-o ServerAliveInterval=45',
+          '-o ServerAliveCountMax=2',
+          '-o noatime',
+          '-o max_conns=4',
+          '-o Ciphers=aes128-ctr',
         },
       },
       mounts = {
@@ -39,7 +47,7 @@ return {
       ui = {
         select_prompts = false, -- not yet implemented
         confirm = {
-          connect = true, -- prompt y/n when host is selected to connect to
+          connect = false, -- prompt y/n when host is selected to connect to
           change_dir = false, -- prompt y/n to change working directory on connection (only applicable if handlers.on_connect.change_dir is enabled)
         },
       },
