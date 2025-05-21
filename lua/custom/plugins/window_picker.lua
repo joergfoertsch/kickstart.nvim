@@ -7,7 +7,36 @@ return {
   event = 'VeryLazy',
   version = '2.*',
   config = function()
-    require('window-picker').setup()
+    require('window-picker').setup {
+      hint = 'statusline-winbar',
+      highlights = {
+        enabled = true,
+        statusline = {
+          focused = {
+            bg = '#7c82a2',
+            fg = '#5d637e',
+            bold = true,
+          },
+          unfocused = {
+            bg = '#7c82a2',
+            fg = '#5d637e',
+            bold = true,
+          },
+        },
+        winbar = {
+          focused = {
+            bg = '#7c82a2',
+            fg = '#5d637e',
+            bold = true,
+          },
+          unfocused = {
+            bg = '#7c82a2',
+            fg = '#5d637e',
+            bold = true,
+          },
+        },
+      },
+    }
   end,
 }
 -- require 'window-picker'.setup({
