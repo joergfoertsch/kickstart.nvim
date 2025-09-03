@@ -13,25 +13,25 @@ return {
         enabled = true,
         statusline = {
           focused = {
-            bg = '#7c82a2',
-            fg = '#5d637e',
+            fg = '#7c82a2',
+            bg = '#5d637e',
             bold = true,
           },
           unfocused = {
-            bg = '#7c82a2',
-            fg = '#5d637e',
+            fg = '#7c82a2',
+            bg = '#5d637e',
             bold = true,
           },
         },
         winbar = {
           focused = {
-            bg = '#7c82a2',
-            fg = '#5d637e',
+            fg = '#7c82a2',
+            bg = '#5d637e',
             bold = true,
           },
           unfocused = {
-            bg = '#7c82a2',
-            fg = '#5d637e',
+            fg = '#7c82a2',
+            bg = '#5d637e',
             bold = true,
           },
         },
