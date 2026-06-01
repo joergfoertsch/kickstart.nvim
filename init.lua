@@ -681,7 +681,6 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -708,8 +707,22 @@ require('lazy').setup({
             },
           },
         },
+        clangd = {
+          filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda', 'proto', 'tpp' },
+          cmd = {
+            'clangd',
+            '--background-index',
+            '--clang-tidy',
+            '--completion-style=detailed',
+            '--header-insertion=iwyu',
+            '-xc++',
+          },
+        },
       }
 
+      vim.filetype.add {
+        extension = { tpp = 'cpp' },
+      }
       -- Ensure the servers and tools above are installed
       --
       -- To check the current status of installed tools and/or manually install
@@ -1045,4 +1058,4 @@ require('lazy').setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=4 sts=4 sw=4 et
